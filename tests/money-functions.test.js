@@ -36,22 +36,22 @@ describe("formatCurrency", () => {
 
 describe("getCoins", () => {
   test("32 cents",()=>{
-    expect(moneyFunction.getCoins(0.32)).toEqual({quarters: 1, dimes: 0, nickels: 1, pennies: 2});
+    expect(moneyFunction.getCoins(32)).toEqual({quarters: 1, dimes: 0, nickels: 1, pennies: 2});
   });
 
   test("10 cents",()=>{
-    expect(moneyFunction.getCoins(0.10)).toEqual({quarters: 0, dimes: 1, nickels: 0, pennies: 0});
+    expect(moneyFunction.getCoins(10)).toEqual({quarters: 0, dimes: 1, nickels: 0, pennies: 0});
   });
 
   test("27 cents",()=>{
-    expect(moneyFunction.getCoins(0.27)).toEqual({quarters: 1, dimes: 0, nickels: 0, pennies: 2});
+    expect(moneyFunction.getCoins(27)).toEqual({quarters: 1, dimes: 0, nickels: 0, pennies: 2});
   });
 
   test("68 cents",()=>{
-    expect(moneyFunction.getCoins(0.68)).toEqual({quarters: 2, dimes: 1, nickels: 1, pennies: 3});
+    expect(moneyFunction.getCoins(68)).toEqual({quarters: 2, dimes: 1, nickels: 1, pennies: 3});
   });
 
   test("larger than $1",()=>{
-    expect(moneyFunction.getCoins(1.05)).toEqual({quarters: 4, dimes: 0, nickels: 1, pennies: 0});
+    expect(moneyFunction.getCoins(105)).toEqual({quarters: 4, dimes: 0, nickels: 1, pennies: 0});
   });
 });

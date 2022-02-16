@@ -10,19 +10,20 @@ function formatCurrency(amount){
 
 function getCoins(cents){
 
-let numOfQuarters = Math.floor((cents*100)/25); 
+    let numOfQuarters = Math.floor((cents/.25)/100)
 
-let remainingChange = (cents-(0.25*numOfQuarters)).toFixed(2);
+    let remainingChange = ((cents/100)-(0.25*numOfQuarters)).toFixed(2);
 
-let numOfDimes = Math.floor((remainingChange*100)/10);
+    let numOfDimes = Math.floor(remainingChange/.10);
 
-remainingChange = (cents-(0.25*numOfQuarters)-(0.10*numOfDimes)).toFixed(2);
+    remainingChange = ((cents/100)-(0.25*numOfQuarters)-(0.10*numOfDimes)).toFixed(2);
 
-let numOfNickels = Math.floor((remainingChange*100)/5);
+    let numOfNickels = Math.floor(remainingChange/.05);
 
-remainingChange = (cents-(0.25*numOfQuarters)-(0.10*numOfDimes)-(0.05*numOfNickels)).toFixed(2);
+    remainingChange = ((cents/100)-(0.25*numOfQuarters)-(0.10*numOfDimes)-(0.05*numOfNickels)).toFixed(2);
 
-let numOfPennies = Math.floor((remainingChange*100)/1);
+    let numOfPennies = Math.floor(remainingChange/.01);
+
 
 let coins = {
     quarters: numOfQuarters,
